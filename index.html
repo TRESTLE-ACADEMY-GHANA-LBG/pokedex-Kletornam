@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Search</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="loader.svg" type="image/x-icon" />
+  </head>
+  <body class="box-border">
+    <div
+      id="loader"
+      class="card-overlay items-center justify-center hidden bg-white"
+    >
+      <img
+        class="animate-bounce h-20 w-20"
+        src="loader.svg"
+        alt="loader-icon"
+      />
+    </div>
+    <div id="overlay" class="card-overlay justify-center hidden overflow-auto">
+      <div class="m-10 w-full p-2 sm:w-6/12">
+        <div class="flex bg-slate-100 flex-col rounded-md place-items-center">
+          <img src="" alt="pokemon-img" id="pokemon-img" />
+          <div>
+            <h4 class="font-bold mb-2" id="pokemon-name"></h4>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-4 bg-slate-100 mt-4 rounded-md items-start justify-between py-4"
+        >
+          <div class="rounded-lg px-2 py-4 min-w-max text-center">
+            <sup class="-my-4 bg-blue-500 p-1 rounded-md text-white font-bold"
+              >Weight(lbs)</sup
+            >
+            <h4 class="-my-2" id="weight"></h4>
+          </div>
+          <div class="rounded-lg px-2 py-4 min-w-max text-center">
+            <sup class="-my-4 bg-blue-500 p-1 rounded-md text-white font-bold"
+              >Height(m)</sup
+            >
+            <h4 class="-my-2" id="height"></h4>
+          </div>
+          <div class="rounded-lg px-2 py-4 min-w-max text-center">
+            <sup class="-my-4 bg-blue-500 p-1 rounded-md text-white font-bold"
+              >Species</sup
+            >
+            <h4 class="-my-2" id="species"></h4>
+          </div>
+          <div class="rounded-lg px-2 py-4 min-w-max text-center">
+            <sup class="-my-4 bg-blue-500 p-1 rounded-md text-white font-bold"
+              >Types</sup
+            >
+            <h4 class="-my-2">
+              <ul id="types"></ul>
+            </h4>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-2 bg-slate-100 mt-4 rounded-md items-start justify-around py-4 overflow-y-hidden"
+        >
+          <div class="py-4 text-center">
+            <sup class="bg-blue-500 p-1 rounded-md text-white font-bold"
+              >Base Stats</sup
+            >
+            <ul id="stats"></ul>
+          </div>
+          <div class="py-4 text-center">
+            <sup class="bg-blue-500 p-1 rounded-md text-white font-bold"
+              >Moves</sup
+            >
+            <ul id="moves"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center">
+      <h1 class="text-3xl text-red-500 mt-8">Pokedex</h1>
+      <p class="mt-8 text-center">
+        The Pokédex contains detailed stats for every creature from the Pokemon
+        games. Select any Pokemonn it's info
+      </p>
+      <div
+        class="bg-slate-50 shadow-md rounded-full sm:w-9/12 w-11/12 m-8 first-line:h-10"
+      >
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search for Pokemons"
+          class="bg-transparent w-full outline-2 p-4 focus:outline-none"
+        />
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-4 grid-cols-2" id="main-grid"></div>
+    <div class="flex justify-center my-8">
+      <button class="btn-red" id="prev">Prev</button>
+      <button class="btn-blue" id="next">Next</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
